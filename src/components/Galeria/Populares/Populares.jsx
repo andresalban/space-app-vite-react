@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import {styled} from "styled-components"
 import Titulo from "../../Titulo/Titulo.jsx"
 
 import fotos from './fotos-populares.json'
@@ -7,6 +7,7 @@ const ColumnaFotos = styled.section`
     display: flex;
     flex-direction: column;
     gap: 16px;
+
 `
 
 const Imagen = styled.img`
@@ -25,6 +26,8 @@ const Boton = styled.button`
     cursor: pointer;
     width: 100%;
     margin-top: 16px;
+    box-sizing: border-box;
+
 `;
 
 const Populares = () => {

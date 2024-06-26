@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import {styled} from "styled-components"
 import search from './search.png'
 
 const ContainerEstilizado = styled.div`
@@ -31,14 +31,13 @@ const IconoLupa = styled.img`
     height: 38px;
 `;
 
-const CampoTexto = () => {
-
+const CampoTexto = ({ setFiltro }) => {
     return (
         <ContainerEstilizado>
-            <CampoTextoEstilizado type="text" placeholder="¿Qué estás buscando?"/>
+            <CampoTextoEstilizado onChange={(evento) => { setFiltro(evento.target.value) }} type="text" placeholder="¿Qué estás buscando?"/>
             <IconoLupa src={search} alt="ícono de lupa" />
         </ContainerEstilizado>
     )
 }
 
-export default CampoTexto;
+export default CampoTexto

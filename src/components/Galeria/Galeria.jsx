@@ -1,5 +1,5 @@
 import Titulo from "../Titulo/Titulo.jsx";
-import Tags from "./Tags/Tags.jsx";
+import Tag from "./Tags/Tags.jsx";
 import Populares from "./Populares/Populares.jsx";
 import styled from "styled-components";
 import Imagen from "./Imagen/Imagen.jsx";
@@ -19,18 +19,21 @@ const ImagenesContainer = styled.section`
     gap: 24px;
 `
 
-const Galeria = ({fotos = [],alSeleccionarFoto}) => {
+const Galeria = ({fotos = [], alSeleccionarFoto, alAlternarFavorito, setTag}) => {
+
     return (
         <>
-            <Tags/>
+            <Tag setTag={setTag}/>
             <GaleriaContainer>
                 <SeccionFluida>
                     <Titulo>Navegue por la galería</Titulo>
                     <ImagenesContainer>
                         {fotos.map(foto => <Imagen
+                            alAlternarFavorito={alAlternarFavorito}
                             alSolicitarZoom={alSeleccionarFoto}
                             key={foto.id}
-                            foto={foto}/>)}
+                            foto={foto}/>)
+                        }
                     </ImagenesContainer>
                 </SeccionFluida>
                 <Populares/>

@@ -3,7 +3,6 @@ import Imagen from "../Galeria/Imagen/Imagen.jsx";
 import BotonIcono from "../BotonIcono/BotonIcono.jsx";
 
 
-
 const Overlay = styled.div`
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
@@ -29,16 +28,16 @@ const DialogEstilizado = styled.dialog`
         }
     }
 `
-const ModalZoom = ({ foto, close }) => {
+const ModalZoom = ({foto, alCerrar, alAlternarFavorito}) => {
     return (
         <>
             {foto && <>
-                <Overlay />
-                <DialogEstilizado open={!!foto} onClose={close}>
-                    <Imagen foto={foto} expandida={true} />
+                <Overlay/>
+                <DialogEstilizado open={!!foto} onClose={alCerrar}>
+                    <Imagen foto={foto} expandida={true} alAlternarFavorito={alAlternarFavorito}/>
                     <form method="dialog">
                         <BotonIcono formMethod="dialog">
-                            <img src="/iconos/cerrar.png" alt="Ícono de cerrar" />
+                            <img src="/iconos/cerrar.png" alt="Ícono de cerrar"/>
                         </BotonIcono>
                     </form>
                 </DialogEstilizado>
